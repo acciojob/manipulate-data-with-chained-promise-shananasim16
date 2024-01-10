@@ -1,24 +1,25 @@
-{
-  "name": "manipulate-data-with-chained-promise",
-  "version": "1.0.0",
-  "description": "Solution Template repo for Acciojob assignments",
-  "main": "index.js",
-  "scripts": {
-    "test": "jest --env=jsdom",
-    "start": "node server.js"
-  },
-  "jest": {
-    "verbose": true,
-    "testEnvironment": "jsdom"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cypress": "^9.5.0",
-    "express": "^4.17.1",
-    "index.js": "0.0.3",
-    "jsdom": "^16.5.3",
-    "supertest": "^6.1.3"
-  }
-}
+const arr=[1, 2, 3 ,4];
+const out= document.getElementById('output');
+
+ const promi= new Promise((resolve, reject)=>{
+        setTimeout(()=>{
+
+          const odd= arr.filter((item)=>{
+            if(item % 2 == 0){
+              return item;
+            }
+        })
+	     out.innerHtml=odd;
+        }, 1000)
+
+        setTimeout(()=>{
+          const even= arr.filter((item)=>{
+            if(item%2 !=0){
+              return item
+            }
+          })
+         out.innerHtml=even;
+          resolve()
+          console.log(promi)
+        }, 3000)
+    })
